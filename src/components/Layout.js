@@ -35,15 +35,35 @@ function Layout({ children, favicon = "/favicon.png" }) {
                             margin: "0",
                         }}
                     >
+                        <div>
+                            <div
+                                style={{
+                                    fontSize: "15vh",
+                                }}
+                            >
+                                1byte
+                            </div>
+                            <div
+                                style={{
+                                    fontSize: "4.5vh",
+                                    marginTop: "-1.7vh",
+                                    color: "yellow",
+                                    marginLeft: "0.8vh",
+                                }}
+                            >
+                                generative audio
+                            </div>
+                        </div>
+
+                        {/* <SyncButton /> */}
                         <div
                             style={{
                                 fontSize: "15vh",
+                                cursor: "pointer",
                             }}
                         >
-                            8bit
+                            ☰
                         </div>
-
-                        <SyncButton />
                     </div>
                 </div>
             </header>
