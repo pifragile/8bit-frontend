@@ -6,6 +6,16 @@ import { WalletContext } from "../lib/wallet";
 function Layout({ children, favicon = "/favicon.png" }) {
     const client = useContext(WalletContext).client;
     const [activeAccount, setActiveAccount] = useState(null);
+    const [showMenu, setShowMenu] = useState(false);
+
+    const openMenu = (event) => {
+        setShowMenu(true);
+    };
+
+    const closeMenu = (event) => {
+        setShowMenu(false);
+    };
+
     useEffect(() => {
         const func = async () => {
             const account = await client.getActiveAccount();
@@ -25,6 +35,23 @@ function Layout({ children, favicon = "/favicon.png" }) {
                 gridTemplateRows: "auto 1fr auto",
             }}
         >
+            {showMenu && (
+                <div class="menu-modal">
+                        <span
+                            class="menu-modal-close"
+                            onClick={closeMenu}
+                        >
+                            &times;
+                        </span>
+                        <div className="menu-content">
+                            <div>Home</div>
+                            <div>Marketplace</div>
+                            <div>My Collection</div>
+                            <div>About</div>
+                        </div>
+                </div>
+            )}
+
             <header>
                 <div className="main">
                     <div
@@ -57,10 +84,12 @@ function Layout({ children, favicon = "/favicon.png" }) {
 
                         {/* <SyncButton /> */}
                         <div
+                            id="hamburger"
                             style={{
                                 fontSize: "15vh",
                                 cursor: "pointer",
                             }}
+                            onClick={openMenu}
                         >
                             ☰
                         </div>
