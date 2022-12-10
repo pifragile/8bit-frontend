@@ -1,11 +1,12 @@
-import { TZKT_API } from "../consts";
+import { contract, TZKT_API } from "../consts";
 import { useState, useEffect } from "react";
 
 import TokenGrid from "./TokenGrid";
 
 import { getToken } from "../lib/api";
+import Layout from "./Layout";
 
-function MarketPlace({ contract }) {
+function MarketPlace() {
     const [tokens, setTokens] = useState(null);
     const [page, setPage] = useState(0);
     const pageLength = 5;
@@ -41,17 +42,17 @@ function MarketPlace({ contract }) {
 
     if (tokens) {
         return (
-            <div>
+            <Layout>
                 <h1>Marketplace</h1>
                 <TokenGrid
                     tokens={tokens}
                     previousPage={previousPage}
                     nextPage={nextPage}
                 />
-            </div>
+            </Layout>
         );
     } else {
-        return "Loading...";
+        return <Layout>"Loading..."</Layout>;
     }
 }
 
