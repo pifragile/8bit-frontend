@@ -1,9 +1,11 @@
 import Layout from "./Layout";
 import TokenOverview from "./TokenOverview";
+import { extractTokensForOverview } from "../lib/utils";
 
 import { useParams } from "react-router-dom";
-import { contract } from "../consts";
+
 import UserDetail from "./UserDetail";
+import { contract } from "../consts";
 function User() {
     let { address } = useParams();
     if (address) {
@@ -14,12 +16,13 @@ function User() {
                 "token.contract": contract,
                 account: address,
                 "balance.gt": 0,
+                "sort.desc": "firstTime"
             });
         return (
             <Layout>
                 <UserDetail address={address} />
                 <h1>Collection</h1>
-                <TokenOverview query={query}></TokenOverview>
+                <TokenOverview query={query} pageLength={6} extractTokens={extractTokensForOverview}></TokenOverview>
             </Layout>
         );
     } else {

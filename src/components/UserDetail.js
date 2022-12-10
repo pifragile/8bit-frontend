@@ -53,6 +53,7 @@ function UserDetail({ address, isLink }) {
             <div className="standard-width">
                 {tzProfile && (
                     <div style={{ marginBottom: "2vw" }}>
+                        {/* FIXME uncomment when tzprofiles starts working again */}
                         {/* <img
                             src={tzProfile.logo}
                             style={{ width: "50px" }}
