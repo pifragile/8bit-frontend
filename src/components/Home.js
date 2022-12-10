@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { contract } from "../consts";
-import { extractTokensForOverview } from "../lib/utils";
+import { contract, tokenPrice } from "../consts";
+import { extractTokensForOverview, formatMutez } from "../lib/utils";
 import { mint, WalletContext } from "../lib/wallet";
 import Layout from "./Layout";
 import TokenOverview from "./TokenOverview";
@@ -12,7 +12,9 @@ function Home() {
 
     return (
         <Layout>
-            <button onClick={handleMint}>Mint</button>
+            <div style={{ marginTop: "10vh" }}>
+            <button style={{width: "min(400px, 80vw)"}} onClick={handleMint}>Mint for {formatMutez(tokenPrice)}</button>
+            </div>
             <div style={{ marginTop: "5vh" }}>
                 <h1>All tokens</h1>
                 <TokenOverview
