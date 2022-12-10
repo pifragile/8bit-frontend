@@ -44,6 +44,7 @@ function Layout({ children, favicon = "/favicon.png" }) {
                             &times;
                         </span>
                         <div className="menu-content">
+                            <div>Sync</div>
                             <div>Home</div>
                             <div>Marketplace</div>
                             <div>My Collection</div>
