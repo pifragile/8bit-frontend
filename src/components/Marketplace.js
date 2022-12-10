@@ -9,7 +9,7 @@ import Layout from "./Layout";
 function MarketPlace() {
     const [tokens, setTokens] = useState(null);
     const [page, setPage] = useState(0);
-    const pageLength = 5;
+    const pageLength = 10;
 
     const previousPage = () => setPage(Math.max(page - pageLength, 0));
     const nextPage = () => setPage(Math.max(page + pageLength, 0));
