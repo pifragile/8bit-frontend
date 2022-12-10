@@ -36,18 +36,18 @@ function SyncButton() {
     return (
         <div
             style={{
-                margin: "0.5vw",
+                cursor: "pointer"
             }}
         >
             {!activeAccount && (
-                <button onClick={connect}>
+                <span onClick={connect}>
                     Sync
-                </button>
+                </span>
             )}
             {activeAccount && (
-                <button onClick={disconnect}>
+                <span onClick={disconnect}>
                     Unsync
-                </button>
+                </span>
             )}
         </div>
     );

@@ -1,9 +1,8 @@
 import Layout from "./Layout";
 import TokenOverview from "./TokenOverview";
-import contracts from "../contracts";
 
 import { useParams } from "react-router-dom";
-
+import { contract } from "../consts";
 import UserDetail from "./UserDetail";
 function User() {
     let { address } = useParams();
@@ -12,7 +11,7 @@ function User() {
             "v1/tokens/balances" +
             "?" +
             new URLSearchParams({
-                "token.contract.in": contracts.map((c) => c.address).join(","),
+                "token.contract": contract,
                 account: address,
                 "balance.gt": 0,
             });

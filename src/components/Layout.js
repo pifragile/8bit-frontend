@@ -44,11 +44,11 @@ function Layout({ children, favicon = "/favicon.png" }) {
                             &times;
                         </span>
                         <div className="menu-content">
-                            <div>Sync</div>
-                            <div>Home</div>
-                            <div>Marketplace</div>
-                            <div>My Collection</div>
-                            <div>About</div>
+                            <div><SyncButton/></div>
+                            <Link to="/"><div>Home</div></Link>
+                            <Link to="/marketplace"><div>Marketplace</div></Link>
+                            <Link to={`/user/${activeAccount}`}><div>My Collection</div></Link>
+                            <Link to="/about"><div>About</div></Link>
                         </div>
                 </div>
             )}

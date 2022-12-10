@@ -2,17 +2,12 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { React, useState } from "react";
 import Home from "./components/Home";
-import Mint from "./components/Mint";
 import TokenDetail from "./components/TokenDetail";
 import User from "./components/User";
 import MarketPlace from "./components/Marketplace";
-import Series from "./components/Series";
 import About from "./components/About";
 
 import { WalletContext, beaconWallet } from "./lib/wallet";
-import ArtistPanel from "./components/ArtistPanel";
-import Sandbox from "./components/Sandbox";
-import SeriesOverview from "./components/SeriesOverview";
 
 function App() {
     const [wallet] = useState(beaconWallet);
@@ -23,20 +18,12 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/mint/:contract" element={<Mint />} />
                     <Route
                         path="/token-detail/:contract/:tokenId"
                         element={<TokenDetail />}
                     />
                     <Route path="/user/:address" element={<User />} />
                     <Route path="/marketplace" element={<MarketPlace />} />
-                    <Route path="/series/:contract" element={<Series />} />
-                    <Route
-                        path="/artist-panel/:contract"
-                        element={<ArtistPanel />}
-                    />
-                    <Route path="/sandbox/" element={<Sandbox />} />
-                    <Route path="/series-overview/" element={<SeriesOverview />} />
                 </Routes>
             </div>
         </WalletContext.Provider>
