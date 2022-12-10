@@ -20,8 +20,6 @@ function TokenDetail() {
     const [tokenPrice, setTokenPrice] = useState(null);
     const [owner, setOwner] = useState(null);
     const [token, setToken] = useState(null);
-    const [artist, setArtist] = useState(null);
-    const [creator, setCreator] = useState(null);
     const [metadata, setMetadata] = useState(null);
 
     useEffect(() => {
@@ -29,12 +27,10 @@ function TokenDetail() {
             let token = await getToken(contract, tokenId);
             token.metadata = await getTokenMetadata(token.contract.address, token.tokenId);
             setToken(token);
-            setArtist(await getContractStorage(contract, "artist_address"));
             setTokenPrice(
                 await getContractBigmap(contract, "listings", tokenId)
             );
             setOwner(await getContractBigmap(contract, "ledger", tokenId));
-            setCreator(await getContractBigmap(contract, "creators", tokenId));
             setMetadata(await getContractMetadata(contract));
         };
 
@@ -50,6 +46,8 @@ function TokenDetail() {
                         <TokenImage
                             url={token.metadata.artifactUri}
                             displayUrl={token.metadata.displayUri}
+                            isBig={true}
+                            forceArtifact={true}
                         />
                     </div>
 
@@ -62,20 +60,15 @@ function TokenDetail() {
                     >
                         <div>
                             <b>Artist:</b>
-                            <UserDetail address={artist} isLink={true} />
+                            <UserDetail address={"tz1gJde57Meuqb2xMYbapTPzgTZkiCmPAMZA"} isLink={true} />
                         </div>
                         <div>
                             <b>Owner:</b>
                             <UserDetail address={owner} isLink={true} />
                         </div>
-
-                        <div>
-                            <b>Creator:</b>
-                            <UserDetail address={creator} isLink={true} />
-                        </div>
                     </div>
                     <div
-                        className="standard-width"
+                        className="token-detail-width"
                         style={{ marginTop: "1vh" }}
                     >
                         <TokenActionForm

@@ -1,10 +1,15 @@
 import { resolveIpfs } from "../lib/utils";
-function TokenImage({ displayUrl, url }) {
+function TokenImage({ displayUrl, url, isBig, forceArtifact }) {
     return (
         <div
-        className="standard-width standard-height"
+            className={
+                isBig
+                    ? "token-detail-width token-detail-height"
+                    : "standard-width standard-height"
+            }
+            style={{ position: "relative" }}
         >
-            {!displayUrl && (
+            {(!displayUrl || forceArtifact) && (
                 <iframe
                     title="token"
                     style={{
@@ -16,7 +21,17 @@ function TokenImage({ displayUrl, url }) {
                 />
             )}
 
-            {displayUrl && <img alt="token" src={resolveIpfs(displayUrl)} />}
+            {displayUrl && !forceArtifact && (
+                <img
+                    alt="token"
+                    src={resolveIpfs(displayUrl)}
+                    style={{
+                        border: "None",
+                        height: "100%",
+                        width: "100%",
+                    }}
+                />
+            )}
         </div>
     );
 }
