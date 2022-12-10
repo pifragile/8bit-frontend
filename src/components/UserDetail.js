@@ -53,11 +53,11 @@ function UserDetail({ address, isLink }) {
             <div className="standard-width">
                 {tzProfile && (
                     <div style={{ marginBottom: "2vw" }}>
-                        <img
+                        {/* <img
                             src={tzProfile.logo}
                             style={{ width: "50px" }}
                             alt="Logo"
-                        ></img>
+                        ></img> */}
                         <div>
                             <b>{tzProfile.alias}</b>
                         </div>
