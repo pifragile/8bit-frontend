@@ -4,5 +4,5 @@ export const RPC_NODE = process.env.REACT_APP_RPC_NODE || 'https://ghostnet.tezo
 export const OBJKT_API = 'https://data.objkt.com/v2/graphql'
 export const IPFS_GATEWAY = 'https://pifragile.mypinata.cloud/ipfs/'
 export const ENV = process.env.REACT_APP_ENV || 'dev';
-export const contract = 'KT1TFdqjkNqgNDyVfNKjcNUH45MRSpTLmhJa'
+export const contract = 'KT1P6HwvkAAb3cvvoFfKYtRMuyeXCTbWSibw'
 export const tokenPrice = 100000;
