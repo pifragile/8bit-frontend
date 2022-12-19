@@ -35,7 +35,7 @@ function Home() {
                         rel="noreferrer"
                     >
                         {" "}
-                        pifragile
+                        Piero @ Solidbit
                     </a>
                     . All sounds are created using Tone.js and melodies are
                     algorithmically generated. See code snippets below.
