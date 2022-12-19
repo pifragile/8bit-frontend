@@ -40,7 +40,7 @@ function TokenDetail() {
     if (token && metadata) {
         return (
             <Layout>
-                <h1>{token.metadata.name}</h1>
+                <h2>{token.metadata.name}</h2>
                 <div>
                     <div title="token">
                         <TokenImage
