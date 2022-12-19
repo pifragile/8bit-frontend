@@ -46,7 +46,7 @@ function TokenDetail() {
                         <TokenImage
                             url={token.metadata.artifactUri}
                             displayUrl={token.metadata.displayUri}
-                            isBig={true}
+                            isBig={false}
                             forceArtifact={true}
                         />
                     </div>
