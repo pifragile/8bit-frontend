@@ -35,7 +35,7 @@ function Home() {
                         rel="noreferrer"
                     >
                         {" "}
-                        Piero @ Solidbit
+                        pifragile
                     </a>
                     .<br/> It is a collection of 32 second 8-bit sound audio snippets with en edition size of 200. All sounds are created using Tone.js and melodies are
                     algorithmically generated. See code snippets below.<br/>
