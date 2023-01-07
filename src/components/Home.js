@@ -44,7 +44,8 @@ function Home() {
                         style={{ width: "min(400px, 80vw)", marginTop: "5vh" }}
                         onClick={handleMint}
                     >
-                        Mint for {formatMutez(tokenPrice)}
+                        Mint opens Jan 10
+                        {/* Mint for {formatMutez(tokenPrice)} */}
                     </button>
                 </div>
 
