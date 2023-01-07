@@ -37,7 +37,7 @@ function Home() {
                         {" "}
                         pifragile
                     </a>
-                    .<br/> It is a collection of 32 second 8-bit sound audio snippets with en edition size of 200. All sounds are created using Tone.js and melodies are
+                    .<br/> It is a collection of 32 second 8-bit audio snippets with en edition size of 200. All sounds are created using Tone.js and melodies are
                     algorithmically generated. See code snippets below.<br/>
                     A <a href={`https://tzkt.io/${contract}`}>custom contract</a> is used to store all token metadata fully on chain.
                     <button
