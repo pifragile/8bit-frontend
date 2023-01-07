@@ -53,15 +53,6 @@ function Home() {
                     {numTokensMinted} / {numTokens} minted
                 </small>
 
-                <div style={{ marginTop: "10vh" }}>
-                    <h1>Behind the scenes</h1>
-
-                    <img src="img/0.png"></img>
-                    <br />
-                    <img src="img/1.png"></img>
-                    <br />
-                    <img src="img/2.png"></img>
-                </div>
                 <div style={{ marginTop: "5vh" }}>
                     <h1>All tokens</h1>
                     Click the token to open the detail view where you can play
@@ -71,6 +62,16 @@ function Home() {
                         pageLength={30}
                         extractTokens={extractTokensForOverview}
                     ></TokenOverview>
+                </div>
+                
+                <div style={{ marginTop: "10vh" }}>
+                    <h1>Behind the scenes</h1>
+
+                    <img src="img/0.png"></img>
+                    <br />
+                    <img src="img/1.png"></img>
+                    <br />
+                    <img src="img/2.png"></img>
                 </div>
             </Layout>
         );
