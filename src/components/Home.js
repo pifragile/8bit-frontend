@@ -74,14 +74,14 @@ function Home() {
                     ></TokenOverview>
                 </div>
 
-                <div style={{ marginTop: "10vh" }}>
+                <div style={{ marginTop: "10vh", maxWidth: "100vw" }}>
                     <h1>Behind the scenes</h1>
 
-                    <img src="img/0.png"></img>
+                    <img src="img/0.png" style={{maxWidth: "100vw" }}></img>
                     <br />
-                    <img src="img/1.png"></img>
+                    <img src="img/1.png" style={{maxWidth: "100vw" }}></img>
                     <br />
-                    <img src="img/2.png"></img>
+                    <img src="img/2.png" style={{maxWidth: "100vw" }}></img>
                 </div>
             </Layout>
         );
